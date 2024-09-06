@@ -1,0 +1,7 @@
+embeddings.csv
+embeddings.csv.gz
+lastSavedItemId.txt
+
+dataset.csv
+venv/
+.idea/
