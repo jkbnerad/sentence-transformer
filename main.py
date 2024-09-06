@@ -55,8 +55,11 @@ if __name__ == '__main__':
         buffer = []
         ids = []
         errors = 0
+        totalProcessed = 0
+
         # Iterate over each row after the header
         for row in csvreader:
+            totalProcessed += 1
             try:
                 ID, name, description, labels = row
                 ID = int(ID)
@@ -102,6 +105,7 @@ if __name__ == '__main__':
                 print(f"Total processed: {preprocessed}")
                 print(f"Time consumed: {timeConsumed} seconds")
                 print(f"Errors: {errors}")
+                print(f"Total processed: {totalProcessed}")
                 buffer = []
                 ids = []
 
