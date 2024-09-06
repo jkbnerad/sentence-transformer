@@ -1,6 +1,7 @@
 embeddings.csv
 embeddings.csv.gz
 lastSavedItemId.txt
+sqls.sql
 
 dataset.csv
 venv/

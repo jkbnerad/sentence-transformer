@@ -57,8 +57,12 @@ if __name__ == '__main__':
 
         # Iterate over each row after the header
         for row in csvreader:
-            ID, name, description, labels = row
-            ID = int(ID)
+            try:
+                ID, name, description, labels = row
+                ID = int(ID)
+            except ValueError:
+                print("Error in row: ", row)
+                continue
 
             if ID <= lastSavedItemId:
                 continue
