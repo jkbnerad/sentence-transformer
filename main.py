@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
         buffer = []
         ids = []
-
+        errors = 0
         # Iterate over each row after the header
         for row in csvreader:
             try:
@@ -62,6 +62,7 @@ if __name__ == '__main__':
                 ID = int(ID)
             except ValueError:
                 print("Error in row: ", row)
+                errors += 1
                 continue
 
             if ID <= lastSavedItemId:
@@ -100,6 +101,7 @@ if __name__ == '__main__':
                 timeConsumed += timeEnd - timeStart
                 print(f"Total processed: {preprocessed}")
                 print(f"Time consumed: {timeConsumed} seconds")
+                print(f"Errors: {errors}")
                 buffer = []
                 ids = []
 
